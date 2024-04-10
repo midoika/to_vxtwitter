@@ -12,7 +12,7 @@
 function redirectTwitter() {
     var inputUrl = document.getElementById("twitterUrl").value;
     var redirectedUrl = inputUrl.replace(/https:\/\/(twitter|x)\.com\//g, "https://vxtwitter.com/");
-    document.getElementById("vxtwitterUrl").value = 元のUrl;
+    document.getElementById("vxtwitterUrl").value = redirectedUrl;
 }
 
 function copyToClipboard() {
@@ -27,12 +27,12 @@ function copyToClipboard() {
 <h1>vxtwitter ジェネレーター</h1>
 <p>Enter a Twitter URL:</p>
 <input type="text" id="twitterUrl">
-<button onclick="redirectTwitter()">Redirect</button>
+<button onclick="redirectTwitter()">元URL</button>
 
 <p>vxtwitter URL:</p>
 <input type="text" id="vxtwitterUrl" readonly>
 
-<button onclick="copyToClipboard()">Copy to Clipboard</button>
+<button onclick="copyToClipboard()">コピー</button>
 
 <p>例</p> 
 <p>前 https://twitter.com/KSUWABE/status/771697739805528064</p>
