@@ -22,26 +22,41 @@ function copyToClipboard() {
     document.execCommand("copy");
     alert("Copied the URL: " + copyText.value);
 }
+
+function clearInput() {
+    document.getElementById("twitterUrl").value = "";
+    document.getElementById("vxtwitterUrl").value = "";
+}
 </script>
 
 <h1>vxtwitter ジェネレーター</h1>
 <p>Enter a Twitter URL:</p>
 <input type="text" id="twitterUrl">
 <button onclick="redirectTwitter()">変換</button>
+<button onclick="clearInput()">クリア</button>
 
 <p>vxtwitter URL:</p>
 <input type="text" id="vxtwitterUrl" readonly>
 
 <button onclick="copyToClipboard()">コピー</button>
 
-<p>例</p> 
-<p>前 https://twitter.com/KSUWABE/status/771697739805528064</p>
-<p>前 https://x.com/KSUWABE/status/771697739805528064</p>
+<p>入力の例:</p> 
+<ul>
+  <li>前 <a href="https://twitter.com/KSUWABE/status/771697739805528064">https://twitter.com/KSUWABE/status/771697739805528064</a></li>
+  <li>前 <a href="https://x.com/KSUWABE/status/771697739805528064">https://x.com/KSUWABE/status/771697739805528064</a></li>
+</ul>
 
-<p>後 https://vxtwitter.com/KSUWABE/status/771697739805528064</p>
-    <br>
+<p>出力の例:</p>
+<ul>
+  <li>後 <a href="https://vxtwitter.com/KSUWABE/status/771697739805528064">https://vxtwitter.com/KSUWABE/status/771697739805528064</a></li>
+</ul>
+
 <p>出力後のURLについて、一切の責任は取れません。ご容赦を。</p>
-<p>Version 0.9.0</p>
+<p>Version 0.9.1</p>
+
+<p>スペシャルサンクス: ChatGPT</p>
+
+<p>参考: <a href="https://github.com/dylanpdx/BetterTwitFix">https://github.com/dylanpdx/BetterTwitFix</a></p>
 
 </body>
 </html>
