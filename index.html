@@ -14,6 +14,9 @@
 .button-container button {
     margin-right: 10px;
 }
+.line-icon {
+    margin-top: -10px;
+}
 </style>
 
 </head>
@@ -38,9 +41,24 @@ function clearInput() {
     document.getElementById("twitterUrl").value = "";
     document.getElementById("vxtwitterUrl").value = "";
 }
+
+// // vxtwitter化後のURLを取得し変数に格納
+// var VxUrl = document.getElementById("vxtwitterUrl").value;
+
+// // IDから<a>要素を取得する
+// var LinkTag = document.getElementById("line-link");
+
+// // <a>要素のhref属性に現在のURLを設定
+// LinkTag .href = "https://line.me/R/share?text=" + VxUrl ;
+
+function shareOnLine() {
+    var VxUrl = document.getElementById("vxtwitterUrl").value;
+    var LinkTag = document.getElementById("line-link");
+    LinkTag.href = "https://line.me/R/share?text=" + encodeURIComponent(VxUrl);
+}
 </script>
 
-<h1>vxtwitter ジェネレーター</h1>
+<h1>vxtwitterジェネレーター</h1>
 <p>Enter a Twitter URL:</p>
 <div class="button-container">
 <input type="text" id="twitterUrl">
@@ -53,7 +71,10 @@ function clearInput() {
 <input type="text" id="vxtwitterUrl" readonly>
 
 <button onclick="copyToClipboard()">コピー</button>
-
+<a id="line-link" href=""><img src="pictures/LINE_APP_iOS.png" alt="LINE" width="30" height="30" class="line-icon"></a>
+<script>
+    document.getElementById("line-link").addEventListener("click", shareOnLine);
+</script>
 <p>入力の例:</p> 
 <ul>
   <li>前 <a href="https://twitter.com/KSUWABE/status/771697739805528064">https://twitter.com/KSUWABE/status/771697739805528064</a></li>
@@ -71,7 +92,7 @@ function clearInput() {
 
 <p>参考: <a href="https://github.com/dylanpdx/BetterTwitFix">https://github.com/dylanpdx/BetterTwitFix</a></p>
 <p>Version 0.9.1</p>
-<p>もしよければ SNS等で「vxtwitter ジェネレーター」を紹介してください！</p>
+<p>もしよければ SNS等で「vxtwitterジェネレーター」を紹介してください！</p>
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://midoika.github.io/to_vxtwitter/" data-color="grey" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
 <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
