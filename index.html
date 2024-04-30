@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>vxtwitter ジェネレーター</title>
+<title>vxtwitterジェネレーター</title>
 <meta property="og:title" content="vxtwitterジェネレーター">
 <meta property="og:description" content="ポスト共有時に必ず画像を表示したい方へ">
 
@@ -46,15 +46,6 @@ function clearInput() {
     document.getElementById("vxtwitterUrl").value = "";
 }
 
-// // vxtwitter化後のURLを取得し変数に格納
-// var VxUrl = document.getElementById("vxtwitterUrl").value;
-
-// // IDから<a>要素を取得する
-// var LinkTag = document.getElementById("line-link");
-
-// // <a>要素のhref属性に現在のURLを設定
-// LinkTag .href = "https://line.me/R/share?text=" + VxUrl ;
-
 function shareOnLine() {
     var VxUrl = document.getElementById("vxtwitterUrl").value;
     var LinkTag = document.getElementById("line-link");
@@ -62,7 +53,7 @@ function shareOnLine() {
 }
 </script>
 
-<h1>vxtwitter ジェネレーター</h1>
+<h1>vxtwitterジェネレーター</h1>
 <p>ポスト共有時、必ず画像を表示したい方へ</p> <!-- 概要文 -->
 <p>Enter a Twitter URL:</p>
 <div class="button-container">
@@ -96,7 +87,7 @@ function shareOnLine() {
 <p>スペシャルサンクス: ChatGPT, <a href="https://openchat.line.me/jp/cover/Vh0qNMxb0czKCSzClmRrydj1F9wqeC1jnr6kLQyqNQM8HtQgjbKtHPHlvE4?utm_source=line-openchat-seo&utm_medium=similar&utm_campaign=cover" target="_blank">マリオファン用情報オプチャ</a></p>
 
 <p>参考: <a href="https://github.com/dylanpdx/BetterTwitFix" target="_blank">https://github.com/dylanpdx/BetterTwitFix</a></p>
-<p>Version 0.9.2</p>
+<p>Version 0.9.3</p>
 <p>もしよければ SNS等で「vxtwitterジェネレーター」を紹介してください！</p>
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://midoika.github.io/to_vxtwitter/" data-color="grey" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
