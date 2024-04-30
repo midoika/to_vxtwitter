@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>vxtwitter ジェネレーター</title>
 <meta property="og:title" content="vxtwitter ジェネレーター">
+
+<style>
+.button-container {
+    margin-top: 10px;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+</style>
+
 </head>
 <body>
 
@@ -31,9 +42,12 @@ function clearInput() {
 
 <h1>vxtwitter ジェネレーター</h1>
 <p>Enter a Twitter URL:</p>
+<div class="button-container">
 <input type="text" id="twitterUrl">
-<button onclick="redirectTwitter()">変換</button>
-<button onclick="clearInput()">クリア</button>
+
+    <button onclick="redirectTwitter()">変換</button>
+    <button onclick="clearInput()">クリア</button>
+</div>
 
 <p>vxtwitter URL:</p>
 <input type="text" id="vxtwitterUrl" readonly>
@@ -58,5 +72,9 @@ function clearInput() {
 
 <p>参考: <a href="https://github.com/dylanpdx/BetterTwitFix">https://github.com/dylanpdx/BetterTwitFix</a></p>
 
+<p>もしよければ SNS等で「vxtwitter ジェネレーター」を紹介してください！</p>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="line-it-button" data-lang="ja" data-type="share-b" data-env="REAL" data-url="https://midoika.github.io/to_vxtwitter/" data-color="grey" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
+<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 </body>
 </html>
