@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vxtwitter ジェネレーター</title>
+<meta property="og:title" content="vxtwitter ジェネレーター">
+
+<style>
+.button-container {
+    margin-top: 10px;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+.line-icon {
+    margin-top: -10px;
+}
+</style>
+
+</head>
+<body>
+
+<script>
+function redirectTwitter() {
+    var inputUrl = document.getElementById("twitterUrl").value;
+    var redirectedUrl = inputUrl.replace(/https:\/\/(twitter|x)\.com\//g, "https://vxtwitter.com/");
+    document.getElementById("vxtwitterUrl").value = redirectedUrl;
+}
+
+function copyToClipboard() {
+    var copyText = document.getElementById("vxtwitterUrl");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    document.execCommand("copy");
+    alert("Copied the URL: " + copyText.value);
+}
+
+function clearInput() {
+    document.getElementById("twitterUrl").value = "";
+    document.getElementById("vxtwitterUrl").value = "";
+}
+
+// // vxtwitter化後のURLを取得し変数に格納
+// var VxUrl = document.getElementById("vxtwitterUrl").value;
+
+// // IDから<a>要素を取得する
+// var LinkTag = document.getElementById("line-link");
+
+// // <a>要素のhref属性に現在のURLを設定
+// LinkTag .href = "https://line.me/R/share?text=" + VxUrl ;
+
+function shareOnLine() {
+    var VxUrl = document.getElementById("vxtwitterUrl").value;
+    var LinkTag = document.getElementById("line-link");
+    LinkTag.href = "https://line.me/R/share?text=" + encodeURIComponent(VxUrl);
+}
+</script>
+
+<h1>vxtwitterジェネレーター</h1>
+<p>Enter a Twitter URL:</p>
+<div class="button-container">
+<input type="text" id="twitterUrl">
+
+    <button onclick="redirectTwitter()">変換</button>
+    <button onclick="clearInput()">クリア</button>
+</div>
+
+<p>vxtwitter URL:</p>
+<input type="text" id="vxtwitterUrl" readonly>
+
+<button onclick="copyToClipboard()">コピー</button>
+<a id="line-link" href=""><img src="pictures/LINE_APP_iOS.png" alt="LINE" width="30" height="30" class="line-icon"></a>
+<script>
+    document.getElementById("line-link").addEventListener("click", shareOnLine);
+</script>
+<p>入力の例:</p> 
+<ul>
+  <li>前 <a href="https://twitter.com/KSUWABE/status/771697739805528064">https://twitter.com/KSUWABE/status/771697739805528064</a></li>
+  <li>前 <a href="https://x.com/KSUWABE/status/771697739805528064">https://x.com/KSUWABE/status/771697739805528064</a></li>
+</ul>
+
+<p>出力の例:</p>
+<ul>
+  <li>後 <a href="https://vxtwitter.com/KSUWABE/status/771697739805528064">https://vxtwitter.com/KSUWABE/status/771697739805528064</a></li>
+</ul>
+
+<p>出力後のURLについて、一切の責任は取れません。ご容赦を。</p>
+
+<p>スペシャルサンクス: ChatGPT</p>
+
+<p>参考: <a href="https://github.com/dylanpdx/BetterTwitFix">https://github.com/dylanpdx/BetterTwitFix</a></p>
+<p>Version 0.9.1</p>
+<p>もしよければ SNS等で「vxtwitterジェネレーター」を紹介してください！</p>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://midoika.github.io/to_vxtwitter/" data-color="grey" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
+<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+</body>
+</html>
