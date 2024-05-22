@@ -19,3 +19,4 @@ Discordや LINEなどにポストを共有する際、携帯端末であれば�
 
 ## v0.9.4
 - vxtwitterではないのを生成禁止
+- Misskeyボタン追加
